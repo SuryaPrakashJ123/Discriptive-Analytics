@@ -18,7 +18,7 @@ This project explores the pricing dynamics of the second-hand car market, specif
 
 ### Engine Size Distribution
 
-![Histogram of Engine Size](images/Histogramofengine.jpg)
+![Histogram of Engine Size](Images/Histogramofengine.jpg)
 
 *Interpretation:*  
 Most Ford Fiestas in this sample are equipped with 1.0-litre engines, with smaller clusters at 1.1 and 1.5 litres. This concentration helps explain why price and performance are relatively consistent for the bulk of the sample.
