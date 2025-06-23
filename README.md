@@ -2,124 +2,134 @@
 
 ## Project Overview
 
-This project provides a detailed statistical analysis of the UK second-hand car market, focusing on the Ford Fiesta. The goal is to understand key drivers of price and build a regression model for accurate market estimation, using a real-world sample of ~100 cars scraped from Auto Trader.
+This project explores the pricing dynamics of the second-hand car market, specifically Ford Fiestas listed on Auto Trader UK. By combining descriptive statistics, hypothesis testing, correlation analysis, and regression modeling, the analysis aims to understand which factors most strongly drive price, and whether local market pricing aligns with national trends.
 
 ---
 
 ## Dataset Description
 
-- **Source:** Auto Trader UK (scraped web data)
-- **Sample:** ~100 Ford Fiesta cars (2020–2023), local market
-- **Main Variables:**
-  - Price
-  - Mileage
-  - Engine size
-  - Registration year
-  - Transmission
-  - Fuel type
-  - Number of doors
-  - Additional equipment/features
+- **Source:** Web-scraped from Auto Trader UK
+- **Sample:** ~100 Ford Fiesta listings (2020–2023 registrations), local area
+- **Key variables:** Price, mileage, engine size, registration year, transmission, fuel type, number of doors, additional features
 
 ---
 
-## Data Visualization
+## Exploratory Data Analysis & Visualization
 
-### Histogram of Engine Size
+### Engine Size Distribution
 
-The majority of Ford Fiestas have 1.0-litre engines, with smaller clusters at 1.1 and 1.5 litres.
+![Histogram of Engine Size](images/Histogramofengine.jpg)
 
-![Histogramofengine](images/Histogramofengine.jpg)
-
----
-
-### Scatter Plot: Price vs Registration Year
-
-Newer (2023) vehicles are more expensive; older cars (2020, 2021) are cheaper. Price volatility exists for 2022 registrations.
-
-![Scatter Plot: Price vs Year](images/scatter_price_year.png)
+*Interpretation:*  
+Most Ford Fiestas in this sample are equipped with 1.0-litre engines, with smaller clusters at 1.1 and 1.5 litres. This concentration helps explain why price and performance are relatively consistent for the bulk of the sample.
 
 ---
 
-### Boxplot: Price by Number of Doors
+### Relationship Between Price and Registration Year
 
-Five-door models are pricier and more stable in price than three-door models.
+![Scatter Plot: Price vs Year](images/Scatterplot.jpg)
 
-![Boxplot: Price by Doors](images/boxplot_price_doors.png)
-
----
-
-## Advanced Statistical Analysis
-
-### Descriptive Statistics
-
-- Median price: £14,692 (higher than mean due to some cheaper cars)
-- Engine size clusters at 1.05L (mostly 1L engines)
-- Sample dominated by new cars, driving up the average price
+*Interpretation:*  
+As expected, newer vehicles command higher prices. 2023 models are typically the most expensive, while 2020 and 2021 cars are less expensive. Notably, there is some price volatility among 2022 models, likely reflecting differences in condition, features, or mileage.
 
 ---
 
-### Confidence Interval for Mileage
+### Price by Number of Doors
 
-- Most cars: 9,000–19,000 miles (median ≈ 13,500)
-- Mean inflated by outliers (average ≈ 15,722 miles)
+![Boxplot: Price by Doors](images/Boxplot.jpg)
 
----
-
-### Hypothesis Testing: Fuel Type & Mileage
-
-**Null hypothesis:** No difference in average mileage between fuel types  
-- Fuel type 1: avg ≈ 11,341 miles  
-- Fuel type 2: avg ≈ 16,052 miles  
-- **p-value = 0.256:** Not statistically significant  
-- Effect size suggests a small practical difference
+*Interpretation:*  
+Five-door Fiestas tend to be pricier and show less price variation than three-door models, possibly due to greater practicality and demand.
 
 ---
 
-### Comparison with UK Market Trends
+## Descriptive Statistics
 
-- Local mean price: £14,229  
-- National mean: £14,180  
-- **p-value = 0.852:** No significant price difference
-- Local prices align with the UK market
+![Descriptive Statistics](images/Discriptivestatistics.jpg)
 
----
-
-### Correlation Analysis
-
-- Price ↑ with engine size (0.345)
-- Price ↓ with higher mileage (−0.265)
-- Newer year ↑ price (0.211)
+*Interpretation:*  
+- The median price is £14,692, with the average price slightly lower due to a handful of cheaper, older models.
+- Engine sizes are tightly clustered around 1.0–1.1L.
+- Mileage shows a typical spread from 9,000–19,000 miles, with outliers at both extremes.
 
 ---
 
-### Regression Model
+## Confidence Intervals for Mileage
 
-The regression explains 24.5% of price variation:
-> **Price = −20735.04 + (8280.28 × Engine Size in Litres) + (1028.13 × Registration Year) − (0.039 × Mileage)**
+![Confidence Interval](images/Confidenceinterval.jpg)
+![Confidence Interval 2](images/confidenceinterval2.jpg)
+![Confidence Interval 3](images/confidenceinterval3.jpg)
 
-- **Engine size and registration year:** Strongest predictors (p < 0.05)
-- **Mileage:** Negative effect, but less significant alone
+*Interpretation:*  
+Most cars in this local sample have driven 9,000 to 19,000 miles. The confidence interval for mean mileage (95%) helps quantify the expected spread and supports reliable comparison across models and segments.
 
 ---
 
-### Residual Analysis
+## Hypothesis Testing: Fuel Type and Mileage
 
-**Residual scatterplot and histogram:**
-- Residuals mostly centered around zero, indicating good model fit
-- Some outliers (model underestimates price for some cars)
-- Durbin-Watson ≈ 2.1 (no autocorrelation)
+![Independent Sample Test](images/Independentsampletest.jpg)
+![Independent Sample Test 2](images/independentsampletest2.jpg)
+![T-TEST](images/T-TEST.jpg)
+![ANOVA Table](images/ANOVA.jpg)
 
-![Residual Scatterplot](images/resid_scatter.png)
-![Residual Histogram](images/resid_hist.png)
+*Interpretation:*  
+Independent samples t-tests and ANOVA suggest there is no statistically significant difference in average mileage between different fuel types (p = 0.256). Although petrol and hybrid/diesel cars show a small difference in means, it’s not strong enough to rule out chance.
+
+---
+
+## Comparison with National Market Trends
+
+![Comparison with Market Trends](images/comparisionwithmarkettrends.jpg)
+
+*Interpretation:*  
+The mean price for local Fiestas (£14,229) matches closely with the UK national mean (£14,180). Statistical tests (p = 0.852) confirm no significant price difference, supporting the idea that local pricing is representative of the broader UK market.
+
+---
+
+## Correlation Analysis
+
+![Correlation Table](images/correlation.jpg)
+
+*Interpretation:*  
+- **Price** increases with engine size (r = 0.345) and registration year (r = 0.211)
+- **Price** decreases as mileage increases (r = -0.265)
+- Other variables, such as doors and transmission, show weaker relationships with price.
+
+---
+
+## Regression Modeling
+
+**Model Summary:**  
+![Model Summary](images/modelsummary.jpg)  
+**Regression Coefficients:**  
+![Coefficients Table](images/Coefficients.jpg)  
+**Regression Output:**  
+![Regression Output](images/regression.jpg)
+
+*Interpretation:*  
+The multiple linear regression model explains about 24.5% of the variation in car price (R² = 0.245). Engine size and registration year are statistically significant predictors (p < 0.05). Mileage has a negative effect, as expected, but is less significant when controlling for other factors.
+
+---
+
+## Residual Analysis
+
+![Residual Statistics](images/Residualstatistics.jpg)
+![Residual Scatterplot](images/Residualscatterplot.jpg)
+![Histogram of Residuals](images/Histogramofresiduals.jpg)
+![Durbin Watson Statistic](images/Durbinwatsonstatistics.jpg)
+
+*Interpretation:*  
+- Residuals are mostly centered around zero, suggesting the model fits the data reasonably well.
+- The residual scatterplot shows a few outliers, where the model underestimates or overestimates the true price.
+- The Durbin-Watson statistic (~2.1) confirms no autocorrelation in the residuals, a sign of good model reliability.
 
 ---
 
 ## Key Takeaways
 
-- **Main price drivers:** Engine size, registration year, mileage
-- **Local prices:** Align with UK national trends
-- **Model performance:** Good fit for most cars; some outliers
-- **Dealers:** Can use this model for strategic, competitive pricing
+- **Price drivers:** Engine size, registration year, and mileage are the most influential factors for Ford Fiesta pricing.
+- **Market alignment:** Local pricing closely mirrors the national average, supporting market-wide pricing strategies.
+- **Model reliability:** The model performs well for most listings, though some outliers remain. Dealers can use these insights to fine-tune their pricing for maximum competitiveness.
 
 ---
 
@@ -129,5 +139,4 @@ The regression explains 24.5% of price variation:
 
 ---
 
-*For details, see the full report and code in this repository.*
-
+*For full details, see the report and statistical output in this repository.*
