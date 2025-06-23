@@ -28,7 +28,7 @@ This project provides a detailed statistical analysis of the UK second-hand car 
 
 The majority of Ford Fiestas have 1.0-litre engines, with smaller clusters at 1.1 and 1.5 litres.
 
-![Histogram of Engine Size](Histogramofengine.jpg)
+![Histogram of Engine Size](images/Histogramofengine.jpg)
 
 ---
 
