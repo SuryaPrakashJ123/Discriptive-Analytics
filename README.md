@@ -27,7 +27,7 @@ Most Ford Fiestas in this sample are equipped with 1.0-litre engines, with small
 
 ### Relationship Between Price and Registration Year
 
-![Scatter Plot: Price vs Year](images/Scatterplot.jpg)
+![Scatter Plot: Price vs Year](Images/Scatterplot.jpg)
 
 *Interpretation:*  
 As expected, newer vehicles command higher prices. 2023 models are typically the most expensive, while 2020 and 2021 cars are less expensive. Notably, there is some price volatility among 2022 models, likely reflecting differences in condition, features, or mileage.
@@ -36,7 +36,7 @@ As expected, newer vehicles command higher prices. 2023 models are typically the
 
 ### Price by Number of Doors
 
-![Boxplot: Price by Doors](images/Boxplot.jpg)
+![Boxplot: Price by Doors](Images/Boxplot.jpg)
 
 *Interpretation:*  
 Five-door Fiestas tend to be pricier and show less price variation than three-door models, possibly due to greater practicality and demand.
@@ -45,7 +45,7 @@ Five-door Fiestas tend to be pricier and show less price variation than three-do
 
 ## Descriptive Statistics
 
-![Descriptive Statistics](images/Discriptivestatistics.jpg)
+![Descriptive Statistics](Images/Discriptivestatistics.jpg)
 
 *Interpretation:*  
 - The median price is £14,692, with the average price slightly lower due to a handful of cheaper, older models.
@@ -56,9 +56,9 @@ Five-door Fiestas tend to be pricier and show less price variation than three-do
 
 ## Confidence Intervals for Mileage
 
-![Confidence Interval](images/Confidenceinterval.jpg)
-![Confidence Interval 2](images/confidenceinterval2.jpg)
-![Confidence Interval 3](images/confidenceinterval3.jpg)
+![Confidence Interval](Images/Confidenceinterval.jpg)
+![Confidence Interval 2](Images/confidenceinterval2.jpg)
+![Confidence Interval 3](Images/confidenceinterval3.jpg)
 
 *Interpretation:*  
 Most cars in this local sample have driven 9,000 to 19,000 miles. The confidence interval for mean mileage (95%) helps quantify the expected spread and supports reliable comparison across models and segments.
@@ -67,10 +67,10 @@ Most cars in this local sample have driven 9,000 to 19,000 miles. The confidence
 
 ## Hypothesis Testing: Fuel Type and Mileage
 
-![Independent Sample Test](images/Independentsampletest.jpg)
-![Independent Sample Test 2](images/independentsampletest2.jpg)
-![T-TEST](images/T-TEST.jpg)
-![ANOVA Table](images/ANOVA.jpg)
+![Independent Sample Test](Images/Independentsampletest.jpg)
+![Independent Sample Test 2](Images/independentsampletest2.jpg)
+![T-TEST](Images/T-TEST.jpg)
+![ANOVA Table](Images/ANOVA.jpg)
 
 *Interpretation:*  
 Independent samples t-tests and ANOVA suggest there is no statistically significant difference in average mileage between different fuel types (p = 0.256). Although petrol and hybrid/diesel cars show a small difference in means, it’s not strong enough to rule out chance.
@@ -79,7 +79,7 @@ Independent samples t-tests and ANOVA suggest there is no statistically signific
 
 ## Comparison with National Market Trends
 
-![Comparison with Market Trends](images/comparisionwithmarkettrends.jpg)
+![Comparison with Market Trends](Images/comparisionwithmarkettrends.jpg)
 
 *Interpretation:*  
 The mean price for local Fiestas (£14,229) matches closely with the UK national mean (£14,180). Statistical tests (p = 0.852) confirm no significant price difference, supporting the idea that local pricing is representative of the broader UK market.
@@ -88,7 +88,7 @@ The mean price for local Fiestas (£14,229) matches closely with the UK national
 
 ## Correlation Analysis
 
-![Correlation Table](images/correlation.jpg)
+![Correlation Table](Images/correlation.jpg)
 
 *Interpretation:*  
 - **Price** increases with engine size (r = 0.345) and registration year (r = 0.211)
@@ -100,11 +100,11 @@ The mean price for local Fiestas (£14,229) matches closely with the UK national
 ## Regression Modeling
 
 **Model Summary:**  
-![Model Summary](images/modelsummary.jpg)  
+![Model Summary](Images/modelsummary.jpg)  
 **Regression Coefficients:**  
-![Coefficients Table](images/Coefficients.jpg)  
+![Coefficients Table](Images/Coefficients.jpg)  
 **Regression Output:**  
-![Regression Output](images/regression.jpg)
+![Regression Output](Images/regression.jpg)
 
 *Interpretation:*  
 The multiple linear regression model explains about 24.5% of the variation in car price (R² = 0.245). Engine size and registration year are statistically significant predictors (p < 0.05). Mileage has a negative effect, as expected, but is less significant when controlling for other factors.
@@ -113,10 +113,10 @@ The multiple linear regression model explains about 24.5% of the variation in ca
 
 ## Residual Analysis
 
-![Residual Statistics](images/Residualstatistics.jpg)
-![Residual Scatterplot](images/Residualscatterplot.jpg)
-![Histogram of Residuals](images/Histogramofresiduals.jpg)
-![Durbin Watson Statistic](images/Durbinwatsonstatistics.jpg)
+![Residual Statistics](Images/Residualstatistics.jpg)
+![Residual Scatterplot](Images/Residualscatterplot.jpg)
+![Histogram of Residuals](Images/Histogramofresiduals.jpg)
+![Durbin Watson Statistic](Images/Durbinwatsonstatistics.jpg)
 
 *Interpretation:*  
 - Residuals are mostly centered around zero, suggesting the model fits the data reasonably well.
